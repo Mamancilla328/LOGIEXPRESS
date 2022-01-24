@@ -173,12 +173,12 @@ router.post('/editCarrier', async (req: Request, res: Response, next: NextFuncti
 	try{
 		const { id, name, lastName, phone, documentID, license, location, Cuenta } = req.body
 	
-		const carrier;
-		const carrierData;
+		let carrier;
+		let carrierData;
 
 		if (name || lastName || phone) {
 	
-			const carrier = await User_Reg.update({name: name, lastName: lastName, phone: phone}, {
+			 carrier = await User_Reg.update({name: name, lastName: lastName, phone: phone}, {
 				where: {
 					id,
 				},
@@ -187,7 +187,7 @@ router.post('/editCarrier', async (req: Request, res: Response, next: NextFuncti
 		}
 	
 		if (documentID || license || location || Cuenta) {
-			const carrierData = await Carrier.update({documentID: documentID, license: license, location: location, Cuenta: Cuenta}, {
+			 carrierData = await Carrier.update({documentID: documentID, license: license, location: location, Cuenta: Cuenta}, {
 				where: {
 					idUserReg: id
 				},
