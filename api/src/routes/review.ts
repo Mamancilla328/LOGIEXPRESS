@@ -35,8 +35,6 @@ router.post('/review/user',async(req:Request,res:Response,next:NextFunction)=>{
     // })
 
 
-
-
     let newReviewCarrier={
         id:v4(),
         Carrrier_raiting,
@@ -54,11 +52,6 @@ router.post('/review/user',async(req:Request,res:Response,next:NextFunction)=>{
     }catch(err){
         next(err)
     }
-
-    
-
-  
-
      
 
 })
@@ -85,13 +78,6 @@ router.post('/review/carrier',async(req:Request,res:Response,next:NextFunction)=
         next(err)
     }
     
-    
-    
-
-
-
-    
-
 
 
 }
@@ -227,5 +213,12 @@ router.get('/reviewUser/:idUser_Reg',async(req:Request,res:Response,next:NextFun
 
 
 })
+
+
+
+
+
+
+   
 
 export default router
